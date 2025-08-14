@@ -9,9 +9,15 @@ import {
 import { TouchableOpacity, TouchableOpacityProps } from 'react-native'
 import { ChevronRight } from 'lucide-react-native'
 
-type Props = TouchableOpacityProps
+import { api } from '@services/api'
 
-export function ExerciseCard({ ...rest }: Props) {
+import { ExerciseDTO } from '@dtos/ExerciseDTO'
+
+type Props = TouchableOpacityProps & {
+  data: ExerciseDTO
+}
+
+export function ExerciseCard({ data, ...rest }: Props) {
   return (
     <TouchableOpacity {...rest}>
       <HStack
@@ -24,7 +30,7 @@ export function ExerciseCard({ ...rest }: Props) {
       >
         <Image
           source={{
-            uri: 'https://w1.pngwing.com/pngs/463/549/png-transparent-man-fitness-centre-exercise-squat-physical-fitness-bodybuilding-muscle-bench.png',
+            uri: `${api.defaults.baseURL}/exercise/thumb/${data.thumb}`,
           }}
           alt="Imagem do exercício"
           w="$16"
@@ -36,11 +42,11 @@ export function ExerciseCard({ ...rest }: Props) {
 
         <VStack flex={1}>
           <Heading fontSize="$lg" fontFamily="$heading" color="$white">
-            Agachamento livre
+            {data.name}
           </Heading>
 
           <Text fontSize="$sm" color="$gray200" mt="$1" numberOfLines={2}>
-            4 séries x 12 repetições
+            {data.series} séries x {data.repetitions} repetições
           </Text>
         </VStack>
 

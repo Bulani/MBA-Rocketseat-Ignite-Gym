@@ -71,7 +71,6 @@ export function SignUp() {
 
       await api.post('/users', { name, email, password })
       await signIn(email, password)
-
     } catch (error) {
       setIsLoading(false)
 
