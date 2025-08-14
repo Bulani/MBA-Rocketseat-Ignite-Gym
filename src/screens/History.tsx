@@ -1,30 +1,30 @@
-import { useState } from "react";
-import { SectionList } from "react-native";
+import { useState } from 'react'
+import { SectionList } from 'react-native'
 
-import { Heading, Text, VStack } from "@gluestack-ui/themed";
+import { Heading, Text, VStack } from '@gluestack-ui/themed'
 
-import { ScreenHeader } from "@components/ScreenHeader";
-import { HistoryCard } from "@components/HistoryCard";
+import { ScreenHeader } from '@components/ScreenHeader'
+import { HistoryCard } from '@components/HistoryCard'
 
-export function History(){
+export function History() {
   const [exercises, setExercices] = useState([
     {
-    title: "11.08.2025",
-    data: ["Puxada frontal", "Remada unilateral"],
+      title: '11.08.2025',
+      data: ['Puxada frontal', 'Remada unilateral'],
     },
     {
-    title: "12.08.2025",
-    data: ["Puxada frontal"],
-    }
+      title: '12.08.2025',
+      data: ['Puxada frontal'],
+    },
   ])
-  
-  return(
+
+  return (
     <VStack flex={1}>
       <ScreenHeader title="Histórico de Exercícios" />
 
-      <SectionList 
+      <SectionList
         sections={exercises}
-        keyExtractor={item => item}
+        keyExtractor={(item) => item}
         renderItem={() => <HistoryCard />}
         renderSectionHeader={({ section }) => (
           <Heading
@@ -39,11 +39,11 @@ export function History(){
         )}
         style={{ paddingHorizontal: 32 }}
         contentContainerStyle={
-          exercises.length === 0 && { flex: 1, justifyContent: "center" }
+          exercises.length === 0 && { flex: 1, justifyContent: 'center' }
         }
         ListEmptyComponent={() => (
           <Text color="$gray100" textAlign="center">
-            Não há exercícios registrados ainda. {"\n"}
+            Não há exercícios registrados ainda. {'\n'}
             Vamos fazer exercícios hoje?
           </Text>
         )}

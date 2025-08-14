@@ -1,7 +1,7 @@
-import { Heading, HStack, Text, VStack } from "@gluestack-ui/themed";
+import { Heading, HStack, Text, VStack } from '@gluestack-ui/themed'
 
-export function HistoryCard(){
-  return(
+export function HistoryCard() {
+  return (
     <HStack
       w="$full"
       px="$5"
@@ -23,11 +23,7 @@ export function HistoryCard(){
           Costas
         </Heading>
 
-        <Text
-          color="$gray100"
-          fontSize="$lg"
-          numberOfLines={1}
-        >
+        <Text color="$gray100" fontSize="$lg" numberOfLines={1}>
           Puxada frontal
         </Text>
       </VStack>
@@ -35,6 +31,6 @@ export function HistoryCard(){
       <Text color="$gray300" fontSize="$md">
         08:56
       </Text>
-    </HStack>    
+    </HStack>
   )
 }

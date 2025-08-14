@@ -1,11 +1,18 @@
-import { Heading, HStack, Image, Text, VStack, Icon } from "@gluestack-ui/themed";
-import { TouchableOpacity, TouchableOpacityProps } from "react-native";
-import { ChevronRight } from "lucide-react-native";
+import {
+  Heading,
+  HStack,
+  Image,
+  Text,
+  VStack,
+  Icon,
+} from '@gluestack-ui/themed'
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native'
+import { ChevronRight } from 'lucide-react-native'
 
 type Props = TouchableOpacityProps
 
-export function ExerciseCard({ ...rest }: Props){
-  return(
+export function ExerciseCard({ ...rest }: Props) {
+  return (
     <TouchableOpacity {...rest}>
       <HStack
         bg="$gray500"
@@ -16,7 +23,9 @@ export function ExerciseCard({ ...rest }: Props){
         mb="$3"
       >
         <Image
-          source={{ uri: "https://w1.pngwing.com/pngs/463/549/png-transparent-man-fitness-centre-exercise-squat-physical-fitness-bodybuilding-muscle-bench.png" }}
+          source={{
+            uri: 'https://w1.pngwing.com/pngs/463/549/png-transparent-man-fitness-centre-exercise-squat-physical-fitness-bodybuilding-muscle-bench.png',
+          }}
           alt="Imagem do exercício"
           w="$16"
           h="$16"
@@ -26,20 +35,11 @@ export function ExerciseCard({ ...rest }: Props){
         />
 
         <VStack flex={1}>
-          <Heading
-            fontSize="$lg"
-            fontFamily="$heading"
-            color="$white"
-          >
+          <Heading fontSize="$lg" fontFamily="$heading" color="$white">
             Agachamento livre
           </Heading>
 
-          <Text
-            fontSize="$sm"
-            color="$gray200"
-            mt="$1"
-            numberOfLines={2}
-          >
+          <Text fontSize="$sm" color="$gray200" mt="$1" numberOfLines={2}>
             4 séries x 12 repetições
           </Text>
         </VStack>

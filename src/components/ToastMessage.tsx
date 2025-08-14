@@ -1,11 +1,18 @@
-import { ToastDescription, ToastTitle, Toast, Pressable, Icon, VStack } from "@gluestack-ui/themed";
-import { X } from "lucide-react-native"
+import {
+  ToastDescription,
+  ToastTitle,
+  Toast,
+  Pressable,
+  Icon,
+  VStack,
+} from '@gluestack-ui/themed'
+import { X } from 'lucide-react-native'
 
 type Props = {
   id: string
   title: string
   description?: string
-  action?: "error" | "success"
+  action?: 'error' | 'success'
   onClose: () => void
 }
 
@@ -13,14 +20,14 @@ export function ToastMessage({
   id,
   title,
   description,
-  action = "success",
-  onClose
-}: Props){
-  return(
+  action = 'success',
+  onClose,
+}: Props) {
+  return (
     <Toast
       nativeID={`toast-${id}`}
       action={action}
-      bgColor={action === "success" ? "$green500" : "$red500"}
+      bgColor={action === 'success' ? '$green500' : '$red500'}
       mt="$10"
     >
       <VStack space="xs" w="$full">

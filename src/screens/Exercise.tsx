@@ -1,25 +1,33 @@
-import { ScrollView, TouchableOpacity } from "react-native";
+import { ScrollView, TouchableOpacity } from 'react-native'
 
-import { VStack, Icon, HStack, Heading, Text, Image, Box } from "@gluestack-ui/themed";
+import {
+  VStack,
+  Icon,
+  HStack,
+  Heading,
+  Text,
+  Image,
+  Box,
+} from '@gluestack-ui/themed'
 
-import { AppNavigatorRoutesProps } from "@routes/app.routes";
+import { AppNavigatorRoutesProps } from '@routes/app.routes'
 
-import { ArrowLeft } from "lucide-react-native";
-import { useNavigation } from "@react-navigation/native";
+import { ArrowLeft } from 'lucide-react-native'
+import { useNavigation } from '@react-navigation/native'
 
-import BodySvg from "@assets/body.svg"
-import SeriesSvg from "@assets/series.svg"
-import RepetitionSvg from "@assets/repetitions.svg"
-import { Button } from "@components/Button";
+import BodySvg from '@assets/body.svg'
+import SeriesSvg from '@assets/series.svg'
+import RepetitionSvg from '@assets/repetitions.svg'
+import { Button } from '@components/Button'
 
-export function Exercise(){
+export function Exercise() {
   const navigation = useNavigation<AppNavigatorRoutesProps>()
-  
-  function handleGoBack(){
+
+  function handleGoBack() {
     navigation.goBack()
   }
 
-  return(
+  return (
     <VStack flex={1}>
       <VStack px="$8" bg="$gray600" pt="$12">
         <TouchableOpacity onPress={handleGoBack}>
@@ -51,13 +59,15 @@ export function Exercise(){
         </HStack>
       </VStack>
 
-      <ScrollView 
+      <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 32 }}
       >
         <VStack p="$8">
           <Image
-            source={{ uri: "https://w1.pngwing.com/pngs/463/549/png-transparent-man-fitness-centre-exercise-squat-physical-fitness-bodybuilding-muscle-bench.png" }}
+            source={{
+              uri: 'https://w1.pngwing.com/pngs/463/549/png-transparent-man-fitness-centre-exercise-squat-physical-fitness-bodybuilding-muscle-bench.png',
+            }}
             alt="Exercício"
             mb="$3"
             resizeMode="cover"
@@ -67,15 +77,24 @@ export function Exercise(){
           />
 
           <Box bg="$gray600" rounded="$md" pb="$4" px="$4">
-            <HStack alignItems="center" justifyContent="space-around" mb="$6" mt="$5">
+            <HStack
+              alignItems="center"
+              justifyContent="space-around"
+              mb="$6"
+              mt="$5"
+            >
               <HStack>
                 <SeriesSvg />
-                <Text color="$gray200" ml="$2">3 séries</Text>
+                <Text color="$gray200" ml="$2">
+                  3 séries
+                </Text>
               </HStack>
 
               <HStack>
                 <RepetitionSvg />
-                <Text color="$gray200" ml="$2">12 repetições</Text>
+                <Text color="$gray200" ml="$2">
+                  12 repetições
+                </Text>
               </HStack>
             </HStack>
 
